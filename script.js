@@ -1,0 +1,220 @@
+const bar_links = document.getElementById("bars-links");
+const more_btns = document.getElementById("more-btn");
+const icon = more_btns.querySelector("i");
+
+// Toggle menu & icon
+more_btns.addEventListener("click", (e) => {
+  e.stopPropagation(); // prevent immediate close
+  bar_links.classList.toggle("active");
+
+  // icon toggle
+  if (bar_links.classList.contains("active")) {
+    icon.classList.replace("fa-bars-staggered", "fa-xmark");
+  } else {
+    icon.classList.replace("fa-xmark", "fa-bars-staggered");
+  }
+});
+
+// Click outside to close
+document.addEventListener("click", (e) => {
+  if (!bar_links.contains(e.target) && !more_btns.contains(e.target)) {
+    bar_links.classList.remove("active");
+    icon.classList.replace("fa-xmark", "fa-bars-staggered");
+  }
+});
+
+const YEAR = (document.getElementById("year").innerHTML =
+  new Date().getFullYear());
+
+let topBtn = document.getElementById("top-btn");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+function calculateExperience(startDate) {
+  const now = new Date();
+
+  let years = now.getFullYear() - startDate.getFullYear();
+  let months = now.getMonth() - startDate.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  if (years > 0) {
+    return `${years} Years & ${months} Months Experience`;
+  } else {
+    return `${months} Months Experience`;
+  }
+}
+
+const skills = {
+  html: new Date("January 01, 2026"),
+  css: new Date("February 15, 2026"),
+  git: new Date("February 01, 2026"),
+  github: new Date("February 01, 2026"),
+  js: new Date("March 01, 2026"),
+  problem: new Date("March 02, 2026"),
+  react: new Date("March 20, 2026"),
+  sass: new Date("March 15, 2026"),
+  bootstrap: new Date("march 25, 2026"),
+  taildwind: new Date("April 01, 2026"),
+  ui: new Date("April 01, 2026"),
+};
+for (let skill in skills) {
+  document.getElementById(`${skill}-exp`).innerHTML = calculateExperience(
+    skills[skill],
+  );
+}
+
+const project_cards = document.getElementById("projects-cards");
+
+function createProject(img, title, tags, description, githubUrl, liveUrl) {
+  const project = document.createElement("div");
+  project.classList.add("projects-card");
+
+  // Image
+  const image = document.createElement("img");
+  image.classList.add("project-image");
+  image.src = img;
+  image.alt = title;
+  project.appendChild(image);
+
+  // Tags
+  const tagsDiv = document.createElement("div");
+  tagsDiv.classList.add("tech-tags");
+  const tagSpan = document.createElement("span");
+  tagSpan.classList.add("tags");
+  tagSpan.textContent = tags;
+  tagsDiv.appendChild(tagSpan);
+  project.appendChild(tagsDiv);
+
+  // Title
+  const h3 = document.createElement("h3");
+  h3.classList.add("project-name");
+  h3.textContent = title;
+  project.appendChild(h3);
+
+  // Description
+  const desc = document.createElement("p");
+  desc.classList.add("project-desc");
+  desc.textContent = description;
+  project.appendChild(desc);
+
+  // GitHub Link
+  const githubLink = document.createElement("a");
+  githubLink.href = githubUrl;
+  githubLink.target = "_blank";
+  githubLink.innerHTML = `<i class="fa-brands fa-github"></i> View on GitHub`;
+  project.appendChild(githubLink);
+
+  // Live Link
+  const liveLink = document.createElement("a");
+  liveLink.href = liveUrl;
+  liveLink.target = "_blank";
+  liveLink.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website`;
+  project.appendChild(liveLink);
+
+  // Final append to container
+  project_cards.appendChild(project);
+}
+
+// Projects array
+const projects = [
+  {
+    img: "../files/cabana-card.png",
+    tags: "HTML, CSS, JS",
+    title: "Cabana Admin Dashboard",
+
+    description: "Responsive dashboard for managing bookings and guests",
+    link: {
+      github: "https://github.com/lakshan-beast/cabana",
+      live: "https://lakshan-beast.github.io/cabana",
+    },
+  },
+
+  {
+    img: "../files/cabana-card.png",
+    tags: "HTML, CSS, JS",
+    title: "Cabana Admin Dashboard",
+
+    description: "Responsive dashboard for managing bookings and guests",
+    link: {
+      github: "https://github.com/lakshan-beast/cabana",
+      live: "https://lakshan-beast.github.io/cabana",
+    },
+  },
+
+  {
+    img: "../files/cabana-card.png",
+    tags: "HTML, CSS, JS",
+    title: "Cabana Admin Dashboard",
+
+    description: "Responsive dashboard for managing bookings and guests",
+    link: {
+      github: "https://github.com/lakshan-beast/cabana",
+      live: "https://lakshan-beast.github.io/cabana",
+    },
+  },
+
+  {
+    img: "../files/cabana-card.png",
+    tags: "HTML, CSS, JS",
+    title: "Cabana Admin Dashboard",
+
+    description: "Responsive dashboard for managing bookings and guests",
+    link: {
+      github: "https://github.com/lakshan-beast/cabana",
+      live: "https://lakshan-beast.github.io/cabana",
+    },
+  },
+
+  // {
+  //   img: '../files/cabana-card.png',
+  //   tags: 'HTML, CSS, JS',
+  //   title: 'Cabana Admin Dashboard',
+
+  //   description: 'Responsive dashboard for managing bookings and guests',
+  //   link: {
+  //     github: 'https://github.com/lakshan-beast/cabana',
+  //     live: 'https://lakshan-beast.github.io/cabana'
+  //   }
+  // },
+
+  // {
+  //   img: '../files/cabana-card.png',
+  //   tags: 'HTML, CSS, JS',
+  //   title: 'Cabana Admin Dashboard',
+
+  //   description: 'Responsive dashboard for managing bookings and guests',
+  //   link: {
+  //     github: 'https://github.com/lakshan-beast/cabana',
+  //     live: 'https://lakshan-beast.github.io/cabana'
+  //   }
+  // }
+];
+
+// Loop through projects array & create cards
+projects.forEach((project) => {
+  createProject(
+    project.img,
+    project.title,
+    project.tags,
+    project.description,
+    project.link.github,
+    project.link.live,
+  );
+});
