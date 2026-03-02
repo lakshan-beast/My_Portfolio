@@ -135,7 +135,7 @@ function createProject(img, title, tags, description, githubUrl, liveUrl) {
 // Projects array
 const projects = [
   {
-    img: "../files/cabana-card.png",
+    img: "Assets\cabana-admin-dashboard.png",
     tags: "HTML, CSS, JS",
     title: "Cabana Admin Dashboard",
 
@@ -147,7 +147,7 @@ const projects = [
   },
 
   {
-    img: "../files/cabana-card.png",
+    img: "Assets\cabana-admin-dashboard.png",
     tags: "HTML, CSS, JS",
     title: "Cabana Admin Dashboard",
 
