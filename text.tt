@@ -789,3 +789,32 @@ large desktop @media(min-width: 1200px) {}
     padding: 1.2rem;
   }
 }
+
+
+
+<h2>About me</h2>
+            <p>
+              Hello! I'm <strong>Lakshan</strong>, a Frontend Developer who
+              transforms concepts into seamless, responsive web experiences.
+              With expertise in HTML, CSS, JavaScript, and React, I build
+              websites, landing pages, dashboards, and small business platforms
+              that are visually appealing, performance-optimized, and
+              mobile-friendly.
+            </p>
+
+            <p>
+              I provide services including website redesigns, UI/UX
+              improvements, bug fixes, and front-end enhancements to ensure
+              websites are fast, functional, and user-centric.
+            </p>
+
+            <p>
+              I also provide website redesigns, UI improvements, bug fixes, and
+              front-end enhancements to improve performance and usability.
+            </p>
+
+            <p>
+              My goal is to deliver high-quality solutions, communicate clearly
+              with clients, and complete projects efficiently, ensuring every
+              project exceeds expectations.
+            </p>

@@ -22,30 +22,30 @@ window.addEventListener("scroll", function () {
   navbar.classList.toggle("transparent", !scrolled);
 });
 
-const bar_links = document.getElementById("bars-links");
-const more_btns = document.getElementById("more-btn");
-const icon = more_btns.querySelector("i");
+// const bar_links = document.getElementById("bars-links");
+// const more_btns = document.getElementById("more-btn");
+// const icon = more_btns.querySelector("i");
 
-// Toggle menu & icon
-more_btns.addEventListener("click", (e) => {
-  e.stopPropagation(); // prevent immediate close
-  bar_links.classList.toggle("active");
+// // Toggle menu & icon
+// more_btns.addEventListener("click", (e) => {
+//   e.stopPropagation(); // prevent immediate close
+//   bar_links.classList.toggle("active");
 
-  // icon toggle
-  if (bar_links.classList.contains("active")) {
-    icon.classList.replace("fa-bars-staggered", "fa-xmark");
-  } else {
-    icon.classList.replace("fa-xmark", "fa-bars-staggered");
-  }
-});
+//   // icon toggle
+//   if (bar_links.classList.contains("active")) {
+//     icon.classList.replace("fa-bars-staggered", "fa-xmark");
+//   } else {
+//     icon.classList.replace("fa-xmark", "fa-bars-staggered");
+//   }
+// });
 
-// Click outside to close
-document.addEventListener("click", (e) => {
-  if (!bar_links.contains(e.target) && !more_btns.contains(e.target)) {
-    bar_links.classList.remove("active");
-    icon.classList.replace("fa-xmark", "fa-bars-staggered");
-  }
-});
+// // Click outside to close
+// document.addEventListener("click", (e) => {
+//   if (!bar_links.contains(e.target) && !more_btns.contains(e.target)) {
+//     bar_links.classList.remove("active");
+//     icon.classList.replace("fa-xmark", "fa-bars-staggered");
+//   }
+// });
 
 // copyright year script
 const YEAR = (document.getElementById("year").innerHTML =
@@ -57,20 +57,20 @@ window.onscroll = function () {
   scrollFunction();
 };
 
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 150 ||
-    document.documentElement.scrollTop > 150
-  ) {
-    topBtn.style.display = "block";
-  } else {
-    topBtn.style.display = "none";
-  }
-}
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+// function scrollFunction() {
+//   if (
+//     document.body.scrollTop > 150 ||
+//     document.documentElement.scrollTop > 150
+//   ) {
+//     topBtn.style.display = "block";
+//   } else {
+//     topBtn.style.display = "none";
+//   }
+// }
+// function topFunction() {
+//   document.body.scrollTop = 0;
+//   document.documentElement.scrollTop = 0;
+// }
 
 // calculate My Experience script
 function calculateExperience(startDate) {
@@ -208,7 +208,7 @@ const projects = [
   // surorise
   {
     img: "../files/surprise.png",
-    tags: "HTML, CSS, JS",
+    // tags: "HTML, CSS, JS, <i class='fas fa-circle'></i>",
     title: "Surprise Project",
 
     description:

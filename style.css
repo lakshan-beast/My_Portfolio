@@ -447,7 +447,7 @@ header i {
   height: 100%;
   width: 1px;
   background: var(--orange);
-  animation: 0.6s infinite cursor;
+  animation: 1s infinite cursor;
 }
 @keyframes cursor {
   to {
